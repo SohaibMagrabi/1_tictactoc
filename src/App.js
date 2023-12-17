@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./comp/Header";
+import Pre from "./comp/Pre";
+import Square from "./comp/Square";
+import Post from "./comp/Post";
+import Footer from "./comp/Footer";
 
 function App() {
+
+  const renderSq = (i) => {
+    return (
+      <Square />
+    )
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-3 h-screen relative" >
+
+      <Header />
+
+
+      <div className="flex flex-col justify-center items-center gap-y-12 mt-12">
+        <Pre />
+        <div className="grid grid-cols-3 relative overflow-hidden shadow-2xl rounded-xl">
+          {
+
+
+            Array.from({ length: 9 }, (_, i) => renderSq(i))
+
+          }
+
+        </div >
+        <Post />
+        <Footer />
+      </div>
+
+      
+
     </div>
   );
 }
