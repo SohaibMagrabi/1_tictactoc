@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components{
+    .x, .o{
+        background-color: red;
+            display: flex;
+            padding: 9px;
+            border-radius: 100%;
+    }
+    .X, .O{
+        background-color: green;
+            display: flex;
+            padding: 9px;
+            border-radius: 100%;
+    }
+
+
+}
